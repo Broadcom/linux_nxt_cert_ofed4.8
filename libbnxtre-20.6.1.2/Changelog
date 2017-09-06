@@ -1,0 +1,9 @@
+Library version 0.0.3
+
+Changes from version 0.0.2
+-- Zero depth SQ/RQ creation is allowed now. JIRA: CTRL-22301
+-- Translate Cu+ work completion error codes to IB-Stack compliant error codes
+-- Fix PSN search pointer access during post send.
+Changes from version 0.0.1
+-- Lib now check for qp-limits during create-qp and post_send/post_recv.
+-- LIb now supports all the available ASIC ids.

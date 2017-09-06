@@ -1,0 +1,237 @@
+                      Release Notes
+           Broadcom User Space Linux RoCE Driver
+                      (libbnxtre)
+                     Version 20.6.1.2
+                        04/10/2016
+
+                        Broadcom
+                  5300 California Avenue,
+                     Irvine, CA 92617
+
+            Copyright (C) 2016-2017 Broadcom
+                   All Rights Reserved
+v20.6.1.2 (April 10, 2017)
+==========================
+Linux User Space RoCE Driver Release
+
+Fix:
+	1. (CTRL-25251) libbnxtre: Swap immediate value
+	   in both send and receive side to workaround a HW bug
+
+v20.6.1.1 (April 4, 2017)
+========================
+Linux User Space RoCE Driver Release
+
+Fix:
+       1. (CTRL-25160) UNH: Dapltest with Multiple Threads,
+          RDMA Read and RDMA Write fails with segmentation fault.
+
+
+v20.6.0.1 (Mar 15, 2017)
+=====================
+Linux User Space RoCE Driver Release
+
+Fix:
+	1. (CTRL-22093) - Update the copyright year in the license text
+
+v20.6.0.0 (Mar 14, 2017)
+=====================
+Linux User Space RoCE Driver Release
+
+Fix:
+	1. (CTRL-22093) - Update the library version scheme to 20.6.0.x
+
+v0.0.18 (Mar 02, 2017)
+=====================
+Linux User Space RoCE Driver Release
+
+Fix:
+	1. (CTRL-24823) - Added workaround for HW bug 9208
+	2. (CTRL-22093) - fix configure-ac script for fedora
+
+
+v0.0.17 (Feb 28, 2017)
+=====================
+Linux User Space RoCE Driver Release
+
+Fix:
+	1. (CTRL-24727) - Fixes to get rstream to work
+
+
+v0.0.16 (Feb 17, 2017)
+=====================
+Linux User Space RoCE Driver Release
+
+Fix:
+	1. (CTRL-22093) - SQ-Full condition check is modified.
+	2. (CTRL-22093) - Library now creates SQ depth exactly
+	   what user has requested.
+
+v0.0.15 (Feb 10, 2017)
+=====================
+Linux User Space RoCE Driver Release
+
+Enhancements:
+    1. Resize CQ is now supported.
+
+v0.0.14 (Jan 25, 2017)
+=====================
+Linux User Space RoCE Driver Release
+
+This library requires bnxt_re-0.0.30 or later.
+
+Enhancements:
+    1. Atomic operations are now supported
+    2. SRQ is now supported.
+    3. Memory Window is now supported.
+
+Fixes:
+    1. Use augmented SQ-depth to circumvent ENG-8916
+
+v0.0.13 (Nov 10, 2016)
+=====================
+Linux User Space RoCE Driver Release
+
+Fixes 1. (CTRL-23509) - Fix num CQEs used when the requested CQEs is
+			more than HW maximum
+
+
+v0.0.12 (Oct 19 2016)
+=====================
+Linux User Space RoCE Driver Release
+
+Fixes 1. (CTRL-23275) setup proper CQ depth to avoid cq-full
+
+
+v0.0.11 (Sept 29 2016)
+======================
+Linux User Space RoCE Driver Release.
+
+Fixes:
+        1. (CTRL-23190) Failed to add QP to the table"
+           message observed while running ib_write_bw IO
+           through VFs on VM.
+        2. (CTRL-23103) Unable to configure more than
+           1023 QPs in RoCE.
+
+v0.0.10 (Sept 16 2016)
+======================
+Linux User Space RoCE Driver Release.
+
+Enhancements:
+        1. Add SR-IOV VF Device IDs.
+Fixes:
+        1. (CTRL-22954) Add NPAR PCI device IDs.
+
+v0.0.9 (Aug 04 2016)
+====================
+Linux User Space RoCE Driver Release.
+
+Enhancements:
+        1. Added version information in the library source code.
+
+v0.0.8 (July 29th 2016)
+=======================
+This is EA-3 release for Linux User Space RoCE Driver.
+Following are the Fixes in this release:
+
+Fixes:
+        1. (CTRL-22600) Propagate API errors properly
+        2. (CTRL-22620) Get MTU value from netdev for UD qp transition
+           to RTR.
+
+v0.0.7 (July 22th 2016)
+=======================
+Linux User Space RoCE Driver release.
+
+Enhancements :
+        1. Added support for UD QPs (creation/destruction/posting).
+        2. Added support for AH (creation/destruction)
+        3. Added a generic framework to have a shared page between
+           user and kernel drivers.
+Fixes :
+        1. Skip PSN serach for UD QPs.
+        2. (CTRL-22493) Generate local-protection error in case
+           local-write perms are missing in the MR.
+        3. (CTRL-22554) pass correct mr length.
+        4. (CTRL-22434) support inline data more than 32 bytes.
+
+v0.0.6 (July 08th 2016)
+=======================
+Linux User Space RoCE Driver release.
+
+Enhancements:
+        1. Add Kernel/User ABI check.
+        2. Convert device-specific data from host to little endian format
+        3. Skip reporting h/w flush errors to consumers from RCQ.
+
+Fixes:
+        1. Print error messages for unsupported features.
+        2. Dont create CQ of size (depth + 1).
+        3. bono hangs on seeing NAK (CTRL-22444).
+
+v0.0.5 (June 30th 2016)
+=======================
+Linux User Space RoCE Driver release.
+
+Fixes:
+        1. (CTRL-22415) Memory leak observed while running dapl limit test
+        2. Convert immediate data for network to host format.
+        3. (CTRL-22368, CTRL-22425) ibv_rc_pingpong application hangs.
+        4. Fix inline-data length check while forming SQE.
+
+v0.0.4 (June 24th 2016)
+=======================
+Linux User Space RoCE Driver release.
+
+Enhancement:
+        1. Added flush CQE management code.
+
+Fixes:
+        1. Fixed Singnaled CQE reporting logic. This allows ucmatose to
+           complete successfully. JIRA: CTRL-22259
+        2. Fixed rping getting stuck forever. JIRA-22266.
+        3. Allow max-depth cq creation.
+
+v0.0.3 (June 17th 2016)
+=======================
+Linux User Space RoCE Driver EA2 release.
+
+Fixes:
+        1. (CTRL-22301) Zero depth SQ/RQ creation is allowed now. JIRA: CTRL-22301
+        2. Translate Cu+ work completion error codes to IB-Stack compliant error codes
+        3. Fix PSN search pointer access during post send.
+
+v0.0.2 (June 3rd 2016)
+======================
+This is the first engineering release of user space linux RoCE driver.
+
+Supported OS
+============
+
+RedHat Enterprise Linux 7.2
+
+Supported IB Stack
+==================
+
+RHEL-7.2 inbox
+
+Supported RoCE Features
+=======================
+
+ -- Reliable connection QP service
+ -- Poll mode completion reporting
+ -- Interrupt mode completion reporting
+ -- Memory region
+ -- Send/Recv, RDMA-Write, RDMA-Read
+ -- Signaled/Unsignaled work request
+
+Know Issues
+===========
+
+ -- Host crash when QP-async event is generated.
+ -- Under heavy traffic conditions packet loss can cause test to hang.
+ -- UD service type is not supported currently.
+ -- Library is not handling Flush-Completion generation.
+ -- Memory-Window, Atomics, SRQ  and RQW-ethernet QP are not supported.
+ -- Big Endian platform is not supported.

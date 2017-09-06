@@ -1,0 +1,756 @@
+                              Release Notes
+                    Broadcom bnxt_re Linux RoCE Driver
+                              Version 20.6.1.3
+                                  04/10/2017
+
+                            Broadcom Limited
+                         5300 California Avenue,
+                            Irvine, CA 92617
+
+                   Copyright (c) 2015-2017 Broadcom
+                           All rights reserved
+
+v20.6.1.3 (Apr 10, 2017)
+======================
+    This version requires the use of Bono FW version 20.6.44.0 and newer
+    This version requires the use of ChiMP FW version 20.6.72 and newer
+    This version requires the use of bnxt_en version 1.7.9 and newer
+    This version requires the use of libbnxtre version 20.6.1.1 and newer
+
+Fixes:
+
+	- JIRA (CTRL-25185) - Report supported value for max_mr_size to IB stack in query_device
+	- JIRA (CTRL-24982) - Allow Send and receive queue posting when QP is in error state
+	- JIRA (CTRL-22093) - Increase the total number of MRs per port
+	- JIRA (CTRL-25283) - Remove RTNL lock dependency in bnxt_re_query_port
+	- JIRA (CTRL-22093) - Update README about Ubuntu 14 support
+
+v20.6.1.2 (Apr 04, 2017)
+======================
+    This version requires the use of Bono FW version 20.6.44.0 and newer
+    This version requires the use of ChiMP FW version 20.6.72 and newer
+    This version requires the use of bnxt_en version 1.7.9 and newer
+    This version requires the use of libbnxtre version 20.6.1.1 and newer
+
+Fixes:
+	- JIRA (CTRL-25229) - Fix compile errors on older kernels without enum pkt_hash_types hash_type
+	- JIRA (CTRL-22093) - Fixed the compilation warning due to re-definition of macros
+	- JIRA (CTRL-22093) - Fix race between netdev register and unregister events
+	- JIRA (CTRL-25160) - free dpi during dealloc ucontext
+	- JIRA (CTRL-25160) - bump up the ABI for both kernel and user driver
+
+
+v20.6.1.1 (Mar 27, 2017)
+======================
+    This version requires the use of Bono FW version 20.6.44.0 and newer
+    This version requires the use of ChiMP FW version 20.6.72 and newer
+    This version requires the use of bnxt_en version 1.7.9 and newer
+    This version requires the use of libbnxtre version 20.6.1.0 and newer
+
+Fixes:
+	- JIRA (CTRL-22093) - Avoid double locking scenario with phantom WQE posting
+	- JIRA (CTRL-24838) - Add vlan tag for RoCE traffic when priority is set and no vlan configured
+	- JIRA (CTRL-24355) - Fix DELETE_GID failure msgs seen when IPV6 link local address is deleted
+	- JIRA (CTRL-24025) - Update README with details of VF resource distribution
+	- JIRA (CTRL-24372) - Added a note in README about fine tuning of system parameters
+
+
+v20.6.1.0 (Mar 20, 2017)
+======================
+    This version requires the use of Bono FW version 20.6.44.0 and newer
+    This version requires the use of ChiMP FW version 20.6.72 and newer
+    This version requires the use of bnxt_en version 1.7.9 and newer
+    This version requires the use of libbnxtre version 20.6.1.0 and newer
+
+Fixes:
+	- JIRA (CTRL-24025) - VF Resource distribution based on active VFs
+	- JIRA (CTRL-24830) - resize_cq() should return the new cq count to the consumer
+	- JIRA (CTRL-24789) - alloc_mr() should set MW Type-2B
+	- JIRA (CTRL-25102) - fix makefile for build with ofed 4.x
+	- JIRA (CTRL-25029) - Workaround NFS-RDMA LOCAL_INV issue in RHEL6.7
+	- JIRA (CTRL-22093) - Adding the GPL v2 license file to the source code
+	- JIRA (CTRL-22014) - Fixed the max_rd_atomic support for initiator and destination QP
+	- JIRA (CTRL-24422) - Enable the flag for mw-bind fence-wqe in Makefile
+
+v20.6.0.1 (Mar 15, 2017)
+======================
+This version requires the use of Bono FW version 20.6.44.0 and newer
+This version requires the use of ChiMP FW version 20.6.72 and newer
+This version requires the use of bnxt_en version 1.7.9 and newer
+This version requires the use of libbnxtre version 20.6.0.0 and newer
+
+Fixes:
+	- JIRA (CTRL-22093) - Copy GPLV2 license text to the driver folder
+			    - Correct the copyright year
+
+
+v20.6.0.0 (Mar 14, 2017)
+======================
+This version requires the use of Bono FW version 20.6.44.0 and newer
+This version requires the use of ChiMP FW version 20.6.72 and newer
+This version requires the use of bnxt_en version 1.7.9 and newer
+This version requires the use of libbnxtre version 20.6.0.0 and newer
+
+Fixes:
+	- JIRA (CTRL-22093) - Update the driver version scheme to 20.6.0.x
+	- JIRA (CTRL-22093) - Update README with instructions to enable SR-IOV for  RH 6.x distro
+
+v0.0.43 (Mar 09, 2017)
+======================
+This version requires the use of Bono FW version 20.6.44.0 and newer
+This version requires the use of ChiMP FW version 20.6.72 and newer
+This version requires the use of bnxt_en version 1.7.9 and newer
+This version requires the use of libbnxtre version 0.0.18 and newer
+
+Fixes:
+	- JIRA (CTRL-22093) - Fix WQE Size posted to HW to prevent it from throwing error
+	- JIRA (CTRL-22093) - Get rid of including the register file as it's not needed
+	- JIRA (CTRL-22093) - Split the HSI file to make a new one for RoCE specific definitions
+	- JIRA (CTRL-25044) - Remove ECN not supported statement from README.TXT
+
+v0.0.42 (Mar 06, 2017)
+======================
+This version requires the use of Bono FW version 20.6.44.0 and newer
+This version requires the use of ChiMP FW version 20.6.72 and newer
+This version requires the use of bnxt_en version 1.7.7 and newer
+This version requires the use of libbnxtre version 0.0.18 and newer
+
+Fixes:
+	- JIRA (CTRL-22093) - Dont export untested page size caps
+	- JIRA (CTRL-22093) - Disable max fmr in query device
+
+v0.0.41 (Mar 05, 2017)
+======================
+This version requires the use of Bono FW version 20.6.44.0 and newer
+This version requires the use of ChiMP FW version 20.6.72 and newer
+This version requires the use of bnxt_en version 1.7.7 and newer
+This version requires the use of libbnxtre version 0.0.18 and newer
+
+Fixes:
+	- JIRA (CTRL-24984) - Enable ECN on UD
+
+
+v0.0.40 (Mar 02, 2017)
+======================
+This version requires the use of Bono FW version 20.6.42.0 and newer
+This version requires the use of ChiMP FW version 20.6.67 and newer
+This version requires the use of bnxt_en version 1.7.0 and newer
+This version requires the use of libbnxtre version 0.0.18 and newer
+
+Fixes:
+	- JIRA (CTRL-24823) - Add workaround for HW Bug 9208
+
+
+v0.0.39 (Mar 02, 2017)
+======================
+This version requires the use of Bono FW version 20.6.38.0 and newer
+This version requires the use of ChiMP FW version 20.6.67 and newer
+This version requires the use of bnxt_en version 1.7.0 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Fixes:
+
+	- JIRA (CTRL-24636) - ReadME update on the number of user process supported per PF
+	- JIRA (CTRL-24780) - ReadMe update on the use of RoCE V1/V2 priority
+	- JIRA (CTRL-24893) - Wait for ULPs to drop driver references during unload
+
+
+v0.0.38 (Feb 28, 2017)
+======================
+This version requires the use of Bono FW version 20.6.38.0 and newer
+This version requires the use of ChiMP FW version 20.6.67 and newer
+This version requires the use of bnxt_en version 1.7.0 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Fixes:
+	- JIRA (CTRL-24780) - Recommendations to use RoCE V1/V2 priority
+	- JIRA (CTRL-24868) - remove the roce device in the reverse order in which it got added
+	- JIRA (CTRL-22093) - Implement the ulp_stop hook that will be invoked from L2 driver
+
+v0.0.37 (Feb 25, 2017)
+======================
+This version requires the use of Bono FW version 20.6.38.0 and newer
+This version requires the use of ChiMP FW version 20.6.67 and newer
+This version requires the use of bnxt_en version 1.7.0 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Fixes:
+	- JIRA (CTRL-22093) - Restore SQ's q_full_delta computation to earlier logic
+	- JIRA (CTRL-24422) - Support a local Fence-WQE to workaround HW-9060. Disabled by default
+
+v0.0.36 (Feb 23, 2017)
+======================
+This version requires the use of Bono FW version 20.6.38.0 and newer
+This version requires the use of ChiMP FW version 20.6.67 and newer
+This version requires the use of bnxt_en version 1.7.0 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Fixes:
+    - JIRA (CTRL-22093) - Fix queue full condition check
+
+
+v0.0.35 (Feb 17, 2017)
+======================
+This version requires the use of Bono FW version 20.6.38.0 and newer
+This version requires the use of ChiMP FW version 20.6.67 and newer
+This version requires the use of bnxt_en version 1.7.0 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Fixes:
+    - JIRA (CTRL-24422) - Added time delay implementation of the SW WA for HW JIRA 9060
+    - JIRA (CTRL-24731) - Fix crash on RHEL 6.8 when bnxt_en module is loaded after bnxt_re
+    - JIRA (CTRL-22093) - Fix queue full condition check
+    - JIRA (CTRL-24693) - Fix compile warning
+    - JIRA (CTRL-22093) - Updated README with the supported OS list and known issues
+    - JIRA (CTRL-24612) - RoCE driver support for Ubuntu 14.04
+
+
+v0.0.34 (Feb 8, 2017)
+======================
+This version requires the use of Bono FW version 20.6.37.0 and newer
+This version requires the use of ChiMP FW version 20.6.60 and newer
+This version requires the use of bnxt_en version 1.7.0 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Fixes:
+    - JIRA (CTRL-24541) - Added a tip in README regarding ETS test cases on SLES11 SP4
+    - JIRA (CTRL-24649) - Suppress false roce_probe errors
+    - JIRA (CTRL-24667) - Fix compile warnings due to uninitialized variables
+    - JIRA (CTRL-24593) - Fix error handling in bnxt_re_dereg_mr
+    - JIRA (CTRL-24612) - Fix compile error on Debian 8 kernel
+    - JIRA (CTRL-24422) - workaround for HW JIRA-9060
+    - JIRA (CTRL-24392)/JIRA (CTRL-24392) - prevent double free on DPI and PD id
+
+v0.0.33 (Feb 6, 2017)
+======================
+This version requires the use of Bono FW version 20.6.36.0 and newer
+This version requires the use of ChiMP FW version 20.6.60 and newer
+This version requires the use of bnxt_en version 1.7.0 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Enhancements:
+    - JIRA (CTRL-22093) - Added modules parameters to enable ECN support
+    - JIRA (CTRL-24034) - RESIZE_CQ support for uverbs consumers in kernel
+			  driver
+    - JIRA (CTRL-22012) - Update to firmware interface spec 1.7.0
+Fixes:
+    - JIRA (CTRL-22092) - Streamline the delay for blocked cmdqe
+    - JIRA (CTRL-22092) - No need to fall back on a default priority
+    - JIRA (CTRL-24617) - Cleanup module unload path
+
+v0.0.32 (Jan 31, 2017)
+======================
+This version requires the use of Bono FW version 20.6.34.0 and newer
+This version requires the use of ChiMP FW version 20.6.54 and newer
+This version requires the use of bnxt_en version 1.6.9 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Fixes:
+    - JIRA (CTRL-22093) - refactor cmdq completion processing
+    - JIRA (CTRL-23605) - Enable atomics only if host bios supports
+    - JIRA (CTRL-24439) - use spinlock to serialize RQ posting
+
+v0.0.31 (Jan 27, 2017)
+======================
+This version requires the use of Bono FW version 20.6.34.0 and newer
+This version requires the use of ChiMP FW version 20.6.54 and newer
+This version requires the use of bnxt_en version 1.6.9 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Fixes:
+    - JIRA (CTRL-24732) - Fix slow path resp critical section
+    - JIRA (CTRL-24469) - RoCE driver support for Ubuntu
+
+Known Issues:
+    - Delete GID for the 0th GID index fails during driver unload
+
+v0.0.30 (Jan 25, 2017)
+======================
+This version requires the use of Bono FW version 20.6.34.0 and newer
+This version requires the use of ChiMP FW version 20.6.54 and newer
+This version requires the use of bnxt_en version 1.6.9 and newer
+This version requires the use of libbnxtre version 0.0.14 and newer
+
+Fixes:
+     - JIRA (CTRL-24372) - Have budgeting for CREQ event processing
+     - JIRA (CTRL-24427) - Fix Max_QP value returned by ibv_devinfo -vv
+     - JIRA (CTRL-22093) - Augment requested SQ depth to workaround HW 8916
+
+v0.0.29 (Jan 20, 2017)
+======================
+This version requires the use of Bono FW version 20.6.34.0 and newer
+This version requires the use of ChiMP FW version 20.6.54 and newer
+This version requires the use of bnxt_en version 1.6.6 and newer
+
+Fixes:
+      - JIRA (CTRL-22093) - Prevent CMDQ corruption during stress traffic scenarios
+			  - Dereg MR in FW before freeing the fast_reg_page_list
+Enhancements:
+      - JIRA (CTRL-22093) - Export memory window bits in uverbs command mask
+
+v0.0.28 (Jan 12, 2017)
+======================
+This version requires the use of Bono FW version 20.6.32.0 and newer
+This version requires the use of ChiMP FW version 20.6.52 and newer
+This version requires the use of bnxt_en version 1.6.6 and newer
+
+Fixes:
+      - JIRA (CTRL-24287) - Fix crash while creating VFs on SLES11 SP4
+      - JIRA (CTRL-23706) - Added a tip in README to avoid mmap failures
+			    in application for large no: of QPs
+      - JIRA (CTRL-22093) - Ring RQ DB after posting 32 RQ entries
+			  - Avoid checking for command queue cookie bit
+			    in bnxt_qplib_rcfw_wait_for_resp
+			  - Prevent sending PRI2COS mapping for VF
+Enhancements:
+      - JIRA (CTRL-24268) - Support for RHEL/CentOS 6.7 and 6.8 kernels
+
+
+v0.0.27 (Jan 06, 2017)
+======================
+This version requires the use of Bono FW version 20.6.32.0 and newer
+This version requires the use of ChiMP FW version 20.6.52 and newer
+This version requires the use of bnxt_en version 1.6.6 and newer
+
+Fixes:
+	- JIRA (CTRL-22093) - Add support for Building SLES11SP4 on XEN kernel
+	- JIRA (CTRL-24194) - Specify RDMA component when allocating stats context
+	- JIRA (CTRL-24196) - Check if PCI function is RoCE capable post ulp_probe
+
+v0.0.26 (Dec 20, 2016)
+======================
+This version requires the use of Bono FW version 20.6.28.0 and newer
+This version requires the use of ChiMP FW version 20.6.40 and newer
+This version requires the use of bnxt_en version 1.6.0 and newer
+
+Fixes:
+    - JIRA (CTRL-22093) - Change the PF mailbox producer offset to
+			  the same as that of the VF.
+    - JIRA (CTRL-23923) - Update the RoCE README regarding the DCB settings from switch.
+    - JIRA (CTRL-23741) - map TC to COS Q even if dcbnl apis return 0
+    - JIRA (CTRL-23945) - Do not free the ctx_tbl entry if delete GID fails
+
+
+v0.0.25 (Dec 6, 2016)
+======================
+This version requires the use of Bono FW version 20.6.28.0 and newer
+This version requires the use of ChiMP FW version 20.6.40 and newer
+This version requires the use of bnxt_en version 1.6.0 and newer
+
+Fixes:
+    - JIRA (CTRL-22565) - Changes to move to the new L2-RoCE driver interface
+    - JIRA (CTRL-22565) - Get rid of ChiMP root communication channel path
+    - JIRA (CTRL-23644) - Call ib_modify_qp() in bnxt_re's modify_qp hook
+			  to validate QP state transitions.
+    - JIRA (CTRL-22093) - Fix bnxt_re_task()- The netdev events workqueue handler
+			  to process non NETDEV_REGISTER events only if device is
+			  already registered with IB stack.
+    - JIRA (CTRL-22012) - Update to firmware interface spec 1.6.0
+    - JIRA (CTRL-23762) - Don't read cookie after qp_event processing
+    - JIRA (CTRL-23411) - Adding Support for bnxt_re compilation with OFED distro
+
+v0.0.24 (Nov 25, 2016)
+======================
+This version requires the use of Bono FW version 20.6.26.0 and newer
+This version requires the use of ChiMP FW version 20.6.40 and newer
+This version requires the use of bnxt_en version 1.5.12 and newer
+
+Fixes:
+    - JIRA (CTRL-23853) - Update bnxt_re's GID table only after HWRM cmd succeeds
+    - JIRA (CTRL-23762) - Increase cmdq depth and handle race for blocking reqs
+    - JIRA (CTRL-23762) - Dont wakeup for atomic context control cmds
+    - JIRA (CTRL-23918) - Arm srq only after posting receive buffers
+    - JIRA (CTRL-23741) - Fix priority query for RoCE V2
+    - JIRA (CTRL-23923) - Update the RoCE README with RoCE V2 information
+
+v0.0.23 (Nov 21, 2016)
+======================
+This version requires the use of Bono FW version 20.6.26.0 and newer
+This version requires the use of ChiMP FW version 20.6.40 and newer
+This version requires the use of bnxt_en version 1.5.12 and newer
+
+Fixes:
+    - JIRA (CTRL-23627) - Fix the SQ size for shadow QP which cause a SQ full condition
+    - JIRA (CTRL-23808) - press srq arm enable through privileged DPI
+    - JIRA (CTRL-23609) - Fix poll_cq locking
+    - JIRA (CTRL-23411) - Add driver compilation support for SLES12 SP2
+    - JIRA (CTRL-22093) - Use GFP_ATOMIC flag while allocating memory in create_ah 
+	
+
+v0.0.22 (Nov 16, 2016)
+======================
+This version requires the use of Bono FW version 20.6.26.0 and newer
+This version requires the use of ChiMP FW version 20.6.40 and newer
+This version requires the use of bnxt_en version 1.5.12 and newer
+
+Fixes:
+    - JIRA (CTRL-23803) - Driver compatibility with RoCE HSI 1.5.0 and
+			  bnxt_en driver 1.5.12
+
+
+
+v0.0.21 (Nov 15, 2016)
+======================
+This version requires the use of Bono FW version 20.6.25.0 and newer
+This version requires the use of ChiMP FW version 20.6.40 and newer
+This version requires the use of bnxt_en version 1.5.11 and newer
+
+Fixes:
+    - JIRA (CTRL-22565) - Fix to register/unregister with IB stack in NETDEV_REG/UNREG
+    - JIRA (CTRL-23295)	- Fix add/del_gid hooks to keep a reference count of the
+			  context that is passed to the stack as an opaque pointer
+    - JIRA (CTRL-23635)	- Fix qplib_dev_attr() to report max_qp_wqes as is returned by FW
+			  instead of subtracting 1
+
+
+v0.0.20 (Nov 10, 2016)
+======================
+This version requires the use of Bono FW version 20.6.23.0 and newer
+This version requires the use of ChiMP FW version 20.6.40 and newer
+This version requires the use of bnxt_en version 1.5.10 and newer
+
+Fixes:
+    - JIRA (CTRL-23509) - Fix num CQEs used when the requested
+			  CQEs is more than HW maximum
+    - JIRA (CTRL-23506)	- Fix system lock up while running iSER
+			  login-logout script
+
+v0.0.19 (Nov 04, 2016)
+======================
+This version requires the use of Bono FW version 20.6.15.0 and newer
+This version requires the use of ChiMP FW version 20.6.30 and newer
+This version requires the use of bnxt_en version 1.5.9 and newer
+
+Fixes:
+    - JIRA (CTRL-22093) - Fix hanlding of small orrq and irrq
+    - JIRA (CTRL-23582) - Changed the size of the CREQ queue to support
+			  QP async notification
+
+
+
+v0.0.18 (Oct 26, 2016)
+======================
+This version requires the use of Bono FW version 20.6.15.0 and newer
+This version requires the use of ChiMP FW version 20.6.30 and newer
+This version requires the use of bnxt_en version 1.5.3 and newer
+
+Fixes:
+    - JIRA (CTRL-23474) - System hangs when IP of an interface is changed
+			  when bnxt_re is loaded
+    - JIRA (CTRL-23469) - System crashes while loading bnxt_en module when
+			  bnxt_re module is already loaded
+    - JIRA (CTRL-22429)/ - Added README for avoiding bnxt_re unload when NFS
+      JIRA (CTRL-23427)   mounted using bnxt_re interface
+
+    - JIRA (CTRL-23061) - Added README regarding misconfigured MTU configurations
+
+    - JIRA (CTRL-23395) - Added README regarding GID deletion failures when
+			  bnxt_re is loaded.
+    - JIRA (CTRL-23144) - Unify the calculation of IRRQ buffer allocation
+
+
+v0.0.17 (Oct 19, 2016)
+======================
+This version requires the use of Bono FW version 20.6.15.0 and newer
+This version requires the use of ChiMP FW version 20.6.30 and newer
+This version requires the use of bnxt_en version 1.5.3 and newer
+
+Fixes:
+    - JIRA (CTRL-22093) - Prevent modifying QP1 or Shadow QP to Error state
+			  during link down event
+
+v0.0.16 (Oct 18, 2016)
+======================
+This version requires the use of Bono FW version 20.6.15.0 and newer
+This version requires the use of ChiMP FW version 20.6.30 and newer
+This version requires the use of bnxt_en version 1.5.3 and newer
+
+Fixes:
+    - JIRA (CTRL-23189) - VF stats not incrmenting during traffic
+    - JIRA (CTRL-23209) - In case of a Link down event, explicitly
+			  move the currently active QPs state to ERR state.
+    - JIRA (CTRL-23362) - Bypass the QP1 length workaround if the length is non-zero
+    - JIRA (CTRL-23275) - setup proper CQ depth to avoid cq-full
+
+Enhancements:
+     - JIRA(CTRL-22093) - Add dynamic debug support for enabling debug
+			  logs. Refer README for usage instructions
+     - JIRA(CTRL-22093) - Add a 30sec polling thread to check changes
+			  in qos mapping
+Known Issues:
+      Few debug messages enabled using dynamic debug feture needs modification.
+      This will be provided in the next release.
+
+v0.0.15 (Oct 6, 2016)
+======================
+This version requires the use of Bono FW version 20.6.15.0 and newer
+This version requires the use of ChiMP FW version 20.6.30 and newer
+This version requires the use of bnxt_en version 1.5.3 and newer
+
+Fixes:
+    - JIRA (CTRL-23167) - Bono Timeout observed during bnxt_re driver
+			  unload when VFs are enabled.
+
+v0.0.14 (Sept 29, 2016)
+======================
+This version requires the use of Bono FW version 20.6.15.0 and newer
+This version requires the use of ChiMP FW version 20.6.30 and newer
+This version requires the use of bnxt_en version 1.5.3 and newer
+
+Enhancements:
+    - JIRA (CTRL-22093) - Distribute the PF pool resources to the VF
+			- README.TXT updated with changes for DCB and
+			  VF resource distribution
+
+v0.0.13 (Sept 19, 2016)
+======================
+This version requires the use of Bono FW version 20.6.13.0 and newer
+This version requires the use of ChiMP FW version 20.6.12 and newer
+This version requires the use of bnxt_en version 1.5.2 and newer
+
+Enhancements:
+    - RoCE QOS support is added to the driver.
+
+Fixes:
+    - JIRA (CTRL-23043) - ibv_devinfo shows incorrect active_speed in
+                  rhel7.3 OS.
+Known Issues:
+    - RoCE QOS support is tech-preview level. Very light testing
+      has been done of this release.
+    - Following driver load sequence is recommended to let DCBx
+      converge:
+        # insmod bnxt_en.ko
+        # sleep 180
+        # insmod bnxt_re.ko
+
+    - Currently RoCE use Priority-5 and Traffic-Class-1 as defaults.
+    - It is recommended to use same host OS version on client and
+      server while running NFS-RDMA or iSER tests. Hetrogeneous host
+      OS may led to unexpected results. This is due to the incompatible
+      ULP server and Client kernel modules.
+
+v0.0.12 (Sept 16, 2016)
+======================
+This version requires the use of Bono FW version 20.6.13.0 and newer
+This version requires the use of ChiMP FW version 20.6.12 and newer
+This version requires the use of bnxt_en version 1.5.2 and newer
+
+Fixes:
+	- JIRA (CTRL-22676) - Take L2 module reference during bnxt_re
+			      initialization
+	- JIRA (CTRL-22918) - Fix query_qp implementation to skip checking
+			      of bits set in qp_attr_mask
+	- JIRA (CTRL-22024) - Avoid interruptable wait for the command 
+			      responses. 
+
+Enhancements:
+	- JIRA (CTRL-22014) - Enable SR-IOV Support on RoCE Devices
+
+
+v0.0.11 (Sept 02, 2016)
+======================
+This version requires the use of Bono FW version 20.6.13.0 and newer
+This version requires the use of ChiMP FW version 20.6.12 and newer
+This version requires the use of bnxt_en version 1.5.0 and newer
+
+Fixes:
+	- JIRA (CTRL-22269) - RoCE interfaces name changed after
+			      performing load-unload of bnxt_re module
+	- JIRA (CTRL-22658) - Host crash if perftest is run using
+			      RDMA-CM through loopback
+
+Enhancements:
+
+
+v0.0.10 (Aug 26, 2016)
+======================
+This version requires the use of Bono FW version 20.6.13.0 and newer
+This version requires the use of ChiMP FW version 20.6.12 and newer
+This version requires the use of bnxt_en version 1.5.0 and newer
+
+Fixes:
+	- JIRA (CTRL-22735) - Error "Watchdog detected hard LOCKUP on cpu 19"
+			      observed while running ib_write_bw IO with 4000 QPs
+	- JIRA (CTRL-22804) - Error in mapping physical MR of more than one page
+
+Enhancements:
+	- Added driver support for RH 7.3
+	- Enabled RoCEV2 by default on the latest kernels (RH 7.3(3.10.x)
+	  and kernel 4.7
+	- JIRA (CTRL-22093)Added support of VLAN over RoCE V2
+	- JIRA (CTRL-22093)Added RoCE V2 IPV6 support
+
+
+v0.0.9 (Jul 29, 2016)
+======================
+This version requires the use of Bono FW version 20.6.9.0 and newer
+This version requires the use of ChiMP FW version 20.6.12 and newer
+This version requires the use of bnxt_en version 1.3.23 and newer
+
+Fixes:
+	- JIRA (CTRL-22455) - system crashed when bnxt_re inserted
+	- JIRA (CTRL-22626) - Active MR stat is getting decremented after
+			      every iteration of traffic run
+	- JIRA (CTRL-22620) - UD QP do not send any frame for tx data size of
+			      4K and MTU is 4K
+	- JIRA (CTRL-22668) - Linux RoCE driver returning incorrect sgid_index
+			      in QUERY_QP
+
+Enhancements:
+	- Added responder error handling
+	- Expanded the SQ doorbell ring cadence to prevent DBR overflow
+	- Fixed kernel crash when reading debugFS stats while interface is down
+	- JIRA (CTRL-22093) - Linux RoCEv2 for RDMA CM (requires kernel 4.7)
+
+Known Issues:
+	- RoCEv2 RDMA CM does not work on the 2nd port 
+
+
+v0.0.8 (Jul 22, 2016)
+======================
+This version requires the use of Bono FW version 20.6.9.0 and newer
+This version requires the use of ChiMP FW version 20.6.12 and newer
+This version requires the use of bnxt_en version 1.3.23 and newer
+
+Fixes:
+	- JIRA (CTRL-22420) - Got "rdma_bind_addr: No such device" error when
+			      binding to a VLAN interface using rping
+	- JIRA (CTRL-22554) - Linux RoCE driver sets incorrect mr size
+	- JIRA (CTRL-22434) - inline data more than 32 bytes fails with local-
+			      qp-operation error
+	- JIRA (CTRL-22286) - client crashes with 400QPs
+
+Enhancements:
+	- JIRA (CTRL-22093) - Linux RoCEv2 (for non-RDMA CM)
+	- Fixed compilation under the newer 4.7.x kernel
+	- Fixed an occassional crash in destroy_qp for non-QP1
+	- Added UD QP support
+	- Added atomic operation support
+
+
+v0.0.7 (Jul 15, 2016)
+======================
+This version requires the use of Bono FW version 20.6.9.0 and newer
+This version requires the use of ChiMP FW version 20.6.12 and newer
+This version requires the use of bnxt_en version 1.3.23 and newer
+
+Fixes:
+	- JIRA (CTRL-22442) - Call to ibv_create_cq() results in bnxt_re driver
+			      crash
+	- JIRA (CTRL-22449) - rdma statistics are not implemented
+
+Enhancements:
+	- Added check for the SGE count against the max to avoid system crash
+	- Performance optimization (shortened the SQ doorbell ring cadence)
+	- Fixed a bug in the terminal CQE handling
+	- No longer forced LOCAL_WRITE permissions on MRs
+	- Skipped PSN search for UD QPs
+	- Added support for user space AH creation
+	- Revised the modify_qp handling
+	- Walk the CQs during the destroy QP process
+	- Moved the bnxt_re_netif.h header file to reside in bnxt_en
+	- Fixed the erroneous VLAN enablement for UD QPs
+
+
+v0.0.6 (Jul 01, 2016)
+======================
+This version requires the use of Bono FW version 20.6.6.0 and newer
+This version requires the use of ChiMP FW version 20.6.12 and newer
+
+Fixes:
+	- Fixed the setting of the NEXT_TO_LAST/LAST flag setting for SQ/PSN
+	  search area when the occupancy level reaches 2 levels of indirection
+
+
+v0.0.5 (Jun 30, 2016)
+======================
+This version requires the use of Bono FW version 20.6.6.0 and newer
+This version requires the use of ChiMP FW version 20.6.12 and newer
+
+Fixes:
+	- JIRA (CTRL-22271) - ibv_devinfo shows invalid value (0) for max_vl_num
+	- JIRA (CTRL-22249) - Cu+ RoCE: Speed "rate" is reported as
+			      "Invalid Argument"
+	- JIRA (CTRL-22253) - RoCE traffic doesn't work on the 2nd port of NIC2d
+	- JIRA (CTRL-22368) - ibv_rc_pingpong application hangs
+	- JIRA (CTRL-22415) - Memory leak observed while running dapl limit test
+
+Enhancements:
+	- Changed the NEXT_TO_LAST/LAST flag settings for the SQ/PSN Search area
+	  to increase stability for retransmissions.
+	- Reinstated the single CREQ entry for the QP error async event as
+	  according to the Bono FW team's suggestion.
+	- Increased the Bono FW slow path response wait retry count as timeouts
+	  were observed.
+	- Note that the new ChiMP and Bono FW will now be dedicating separate CoS
+	  queues to separate L2 traffics from RoCE traffics which should improve
+	  the performance of cnic tests.
+
+
+v0.0.4 (Jun 24, 2016)
+======================
+This version requires the use of Bono FW version 20.6.4.0 and newer
+This version requires the use of ChiMP FW version 20.6.6 and newer
+
+Fixes:
+	- JIRA (CTRL-22259) - rdma_cm connection doesn't terminate and crashes
+			      when client is terminated explicitly.
+	- JIRA (CTRL-22387) - System crashes while bringing up a vlan interface
+			      after the RoCE drier is loaded.
+	- JIRA (CTRL-22262) - IPv4 based GID is not included after doing ifdown/
+			      ifup.
+	- Added WR send INLINE support
+	- Fixed the license info for modinfo
+	- Fixed sgid for the 2nd port.
+	- Fixed the error CQE handling.
+	- Fixed the async QP error handling. 
+
+Enhancements:
+	- Added support for kernel version 4.7-rc1.
+
+
+v0.0.3 (Jun 17, 2016)
+======================
+This version requires the use of Bono version 20.6.2.0 and newer
+This version requires the use of ChiMP version 20.6.6 and newer
+
+Fixes:
+	- JIRA (CTRL-22281) - Show kernel panic after running traffic over
+			      iSER targets.
+	- JIRA (CTRL-22262) - IPv4 based GID is not included after doing
+			      ifdown/ifup.
+	- JIRA (CTRL-22254) - RoCE on SuSE : compilation failure
+	- Fixed the compilation of the driver for kernel 4.6.
+	- Fixed IRRQ/ORRQ context memory allocation.
+	- Fixed QP/SRQ max allocation cap
+
+Enhancements:
+	- Added Req error CQE handling.
+	- Integrated all RoCE related changes into an unified bnxt_en driver.
+	- Added the HSI changes required for the Bono 20.6.2.
+
+
+v0.0.2 (Jun 02, 2016)
+======================
+This version uses Bono version 20.6.0
+This version uses ChiMP version 20.6.6
+
+Inception.
+
+Fixes:
+	N/A
+
+Enhancements:
+	N/A
+
+Known Issues:
+	- Packet drops can be observed if heavy I/O is ran
+	- Link Flow Control does not get enabled on NIC3 boards
+	- NFSoRDMA operation is limited to using iozone -Ra
+	- iSER operation is limited due to packet drops observed
+	- NVMf storage establishment can be done but heavy I/O
+	  shows packet drops
+	- The IP address and the interface should be UP prior to the
+	  bnxt_re driver getting loaded.  This is due to the limit
+	  of the 2 SGIDs allocated per function.
+	- Only a max of 64K QPs, SRQs, CQs, and MRs are supported.
